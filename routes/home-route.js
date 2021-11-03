@@ -1,6 +1,6 @@
 const express =require('express');
 //const{indexView}=('../controllers/homeController');
-let userController = require('../controllers/homeController');
+let userController = require('../controllers/homeContoller');
 const router = express.Router();
 
 router.get("/dashboard", function(req, res) {
