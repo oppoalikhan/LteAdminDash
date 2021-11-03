@@ -5,14 +5,19 @@ var connection  = require('../config/db.config');
 module.exports = {
    indexView: async function (req, res,next) {
       res.render('../views/layout.ejs');
-   }
-}
-
-module.exports = {
+   },
    loginView: async function (req, res,next) {
       res.render('../views/login.ejs');
-   }
+   
 }
+}
+
+
+// module.exports = {
+//    loginView: async function (req, res,next) {
+//       res.render('../views/login.ejs');
+//    }
+// }
 
 
 
