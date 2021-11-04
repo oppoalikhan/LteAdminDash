@@ -9,14 +9,14 @@ const router = express.Router();
      router.get("/", function(req, res) {
         userController.loginView(req,res);
         });
-       router.get("/dashbaord", function(req,res){
+       router.post("/dashboard", function(req,res){
           userController.indexView(req,res);
-          if (request.session.loggedin) {
-            response.render('../views/layout.ejs ');
+          if (req.session.loggedin) {
+            res.render('../views/layout.ejs ');
         } else {
-            response.send('Please login to view this page!');
+            res.send('Please login to view this page!');
         }
-        response.end();
+        res.end();
        });
     
     module.exports =router;

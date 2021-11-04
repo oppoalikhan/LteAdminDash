@@ -10,13 +10,13 @@ module.exports = {
       res.render('../views/login.ejs');   
 },
      indexView: async function (req,res,next){
-      var username = request.body.username;
-      var password = request.body.password;
+      var username = req.body.username;
+      var password = req.body.password;
       if (username && password) {
          connection.query('SELECT * FROM logUser WHERE username = ? AND password = ?', [username, password], function(error, results, fields) {
             if (results.length > 0) {
-               request.session.loggedin = true;
-               request.session.username = username;
+               req.session.loggedin = true;
+               req.session.username = username;
                response.redirect('/dashbaord');
             } else {
                response.send('Incorrect Username and/or Password!');
